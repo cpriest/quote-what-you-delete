@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no,date=no,address=no,email=no,url=no">
+<title>Candidate one-pager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Tinos:ital,wght@0,400;0,700&display=swap">
+<style>
+  @page { size: letter; margin: 0; }
+  :root {
+    --paper: #FFFFFF; --ink: #20242B; --muted: #5A6170; --strike: #9E1B1B;
+    --rule: #D6D3CA; --strip: #F0EFEA;
+    --sans: "Public Sans", "Segoe UI", Arial, sans-serif;
+    --serif: "Tinos", "Times New Roman", Times, serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { background: var(--paper); color: var(--ink); font-family: var(--sans); }
+  .page {
+    width: 8.5in; height: 11in; padding: 0.5in 0.6in 0.42in;
+    display: flex; flex-direction: column; overflow: hidden;
+  }
+
+  .band { border-bottom: 3px solid var(--ink); padding-bottom: 8px; display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+  .band .kicker { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+  h1 { font-size: 25px; font-weight: 800; letter-spacing: -0.01em; margin: 10px 0 2px; }
+  .sub { font-size: 11.5px; color: var(--muted); margin-bottom: 12px; }
+
+  .cols { display: flex; gap: 18px; flex: 1; }
+  .col { flex: 1; display: flex; flex-direction: column; }
+  .col > * { flex: none; }
+  a { color: inherit !important; text-decoration: none !important; }
+  .nolink, .nolink * { color: var(--ink) !important; text-decoration: none !important; }
+  .foot { margin-top: 10px; }
+
+  h2 { font-size: 10.5px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; margin: 12px 0 6px; color: var(--ink); }
+  p { font-size: 11px; line-height: 1.45; margin-bottom: 7px; }
+  ul { padding-left: 14px; margin-bottom: 7px; }
+  li { font-size: 11px; line-height: 1.42; margin-bottom: 4px; }
+
+  .evidence { background: var(--strip); border: 1px solid var(--rule); padding: 10px 12px; margin: 4px 0 2px; }
+  .evidence .label { font-size: 9px; font-weight: 700; letter-spacing: 0.11em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+  .evidence .q { font-family: var(--serif); font-size: 10.5px; line-height: 1.4; color: var(--ink); }
+  .evidence .q b { font-weight: 700; }
+  .del-hero {
+    font-family: var(--serif); font-size: 16.5px; line-height: 1.32; font-weight: 700; margin: 8px 0 2px;
+    text-decoration: line-through; text-decoration-color: var(--strike); text-decoration-thickness: 2.5px;
+  }
+  .caption { font-size: 9.5px; color: var(--muted); }
+
+  .sayit { border-left: 3px solid var(--strike); background: var(--strip); padding: 9px 12px; margin: 4px 0 8px; }
+  .sayit p { font-size: 11px; font-style: italic; margin-bottom: 0; }
+
+  .rulebox { border: 2px solid var(--ink); padding: 10px 12px; margin: 4px 0 8px; }
+  .rulebox p { font-family: var(--serif); font-size: 11.5px; line-height: 1.45; margin: 0; }
+
+  .stats { display: flex; gap: 14px; margin: 6px 0 8px; }
+  .stat { flex: 1; border-top: 2px solid var(--ink); padding-top: 5px; }
+  .stat .n { font-size: 20px; font-weight: 800; line-height: 1; }
+  .stat .n.red { color: var(--strike); }
+  .stat .l { font-size: 9px; line-height: 1.3; color: var(--muted); font-weight: 600; }
+
+  .ask { background: var(--ink); color: var(--paper); padding: 11px 14px; margin-top: auto; }
+  .ask h2 { color: var(--paper); margin: 0 0 4px; }
+  .ask p { color: var(--paper); font-size: 11px; margin-bottom: 4px; }
+  .ask .contact { font-weight: 700; }
+  .foot { font-size: 8.5px; color: var(--muted); padding-top: 6px; display: flex; justify-content: space-between; gap: 8px; }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="band">
+    <span class="kicker">A one-page brief for 2026 Minnesota legislative candidates</span>
+    <span class="kicker">August 2026</span>
+  </div>
+
+  <h1>The ballot honesty bill</h1>
+  <div class="sub">Every voter you meet this fall will see the school fund amendment on their ballot. Here is an answer that works no matter your position on it, and a bill you can commit to introducing in January.</div>
+
+  <div class="cols">
+    <div class="col">
+      <h2>What voters will see November 3</h2>
+      <div class="evidence">
+        <div class="label">Official ballot &middot; as mandated by HF 3900</div>
+        <div class="q"><b>Increasing funding to school districts.</b><br>"Shall the Minnesota Constitution be amended to increase the funding going to all school districts from the permanent school fund, which is a fund that supports school districts without raising individual income or property taxes, effective <span class="nolink">July&nbsp;1, 2027</span>?"</div>
+      </div>
+
+      <h2>What the question never mentions</h2>
+      <p>The amendment deletes 76 words from Article XI, Section 8 of the constitution, including this sentence:</p>
+      <div class="del-hero">"The principal of the permanent school fund shall be perpetual and inviolate forever."</div>
+      <p class="caption">Also deleted: the requirement that investment losses be repaid to the fund. Also unmentioned: the new 4.5% payout rate sits in ordinary statute, changeable by any future simple majority.</p>
+
+      <div class="stats">
+        <div class="stat"><div class="n">76</div><div class="l">words deleted from the constitution</div></div>
+        <div class="stat"><div class="n red">0</div><div class="l">mentions of any deletion in the question</div></div>
+        <div class="stat"><div class="n red">0/6</div><div class="l">score on published transparency criteria</div></div>
+      </div>
+
+      <h2>This is not about the amendment</h2>
+      <p>The endowment model is defensible; many will vote yes on the merits. The problem is the question. Sell an investment this way and it's securities fraud. On a ballot, it's legal. In Minnesota you owe a homebuyer more disclosure than you owe voters amending their constitution.</p>
+    </div>
+
+    <div class="col">
+      <h2>The answer that fits any position</h2>
+      <div class="sayit">
+        <p>"Vote however you like on the amendment. But that question should have shown you the words it deletes. When I'm in St. Paul, I'll make sure no Minnesotan is ever asked a question like this again."</p>
+      </div>
+
+      <h2>The bill, in one sentence</h2>
+      <div class="rulebox">
+        <p>Any ballot question proposing to amend the Minnesota Constitution that would delete or modify existing constitutional language must quote that language verbatim in the question as it appears on the ballot.</p>
+      </div>
+
+      <h2>Why it's safe to run on</h2>
+      <ul>
+        <li><b>It touches no pending measure.</b> Effective for the 2028 election; the 2026 amendment is decided before the bill's first hearing. Supporting the amendment and this bill are fully compatible.</li>
+        <li><b>It has no team.</b> Scored against history, the 2012 marriage amendment question was fully transparent; the 2008 Legacy title wasn't. The rule bites concealment, not any party.</li>
+        <li><b>It costs nothing.</b> No appropriation, no new office, no discretion: either the deleted words appear in the question or they don't. Any citizen can verify compliance in the voting booth.</li>
+        <li><b>It's already drafted.</b> A bill-ready section (proposed Minn. Stat. &sect;204D.151) with drafting notes exists and can be introduced unchanged. The honest version of the 2026 question runs 127 words and fits on a ballot with no legal obstacle.</li>
+        <li><b>Opposing it is miserable.</b> The counterargument is that voters shouldn't see the text they're voting to remove. Nobody campaigns on that.</li>
+      </ul>
+
+      <div class="ask">
+        <h2>The ask</h2>
+        <p>Commit to authoring or co-authoring this bill in January 2027. We are recruiting authors from both parties at the same time, and the first authors define it.</p>
+        <p class="contact">Clint Priest &middot; hello@ballothonesty.org</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span>Sources: HF 3900, 3rd Engrossment (2026) &middot; Minn. Const. art. XI, &sect;8 &middot; revisor.mn.gov &middot; full evidence file and bill draft available on request</span>
+    <span>Ballot Honesty Project &middot; "Quote what you delete." &middot; ballothonesty.org</span>
+  </div>
+</div>
+</body>
+</html>

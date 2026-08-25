@@ -1,0 +1,192 @@
+<title>Quote What You Delete</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap">
+<style>
+  :root {
+    --ground: #EDEBE4;
+    --paper: #FFFFFF;
+    --ink: #20242B;
+    --muted: #646B77;
+    --strike: #9E1B1B;
+    --rule: #D6D3CA;
+    --strip: #F0EFEA;
+    --sans: "Public Sans", "Segoe UI", Arial, sans-serif;
+    --serif: "Tinos", "Times New Roman", Times, serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #16181D; --paper: #1F232B; --ink: #E8E5DC; --muted: #9AA0AB;
+      --strike: #E0564F; --rule: #363B44; --strip: #272C34;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #16181D; --paper: #1F232B; --ink: #E8E5DC; --muted: #9AA0AB;
+    --strike: #E0564F; --rule: #363B44; --strip: #272C34;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--ground); color: var(--ink);
+    font-family: var(--sans); line-height: 1.55; -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 40px 24px 80px; }
+
+  .masthead {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap;
+    font-size: 13px; font-weight: 600; letter-spacing: 0.13em; text-transform: uppercase;
+    color: var(--muted); padding-bottom: 14px; border-bottom: 2px solid var(--ink);
+  }
+  .masthead .right { color: var(--ink); }
+
+  h1 {
+    font-size: clamp(30px, 5vw, 42px); line-height: 1.12; font-weight: 800;
+    letter-spacing: -0.015em; margin: 26px 0 10px; text-wrap: balance;
+  }
+  .standfirst { font-size: 17px; color: var(--muted); margin: 0 0 8px; max-width: 62ch; }
+
+  h2 {
+    font-size: 15px; font-weight: 700; letter-spacing: 0.11em; text-transform: uppercase;
+    border-top: 1px solid var(--rule); padding-top: 20px; margin: 44px 0 14px;
+  }
+  p { font-size: 16.5px; margin: 0 0 14px; max-width: 68ch; }
+  .note-list { margin: 0 0 14px; padding-left: 22px; max-width: 66ch; }
+  .note-list li { font-size: 16px; margin-bottom: 12px; }
+  .note-list li strong { display: block; }
+
+  .slogan {
+    background: var(--paper); border-left: 4px solid var(--strike);
+    padding: 20px 24px; margin: 22px 0 6px;
+    font-family: var(--serif); font-size: 21px; line-height: 1.5;
+  }
+  .slogan-caption { font-size: 13.5px; color: var(--muted); margin-bottom: 0; }
+
+  /* Bill text, styled like an introduced bill */
+  .bill {
+    background: var(--paper); border: 1px solid var(--rule); box-shadow: 0 1px 0 var(--rule);
+    margin: 18px 0 10px;
+  }
+  .bill-strip {
+    border-bottom: 1px solid var(--rule); padding: 11px 22px;
+    font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted);
+    display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap;
+  }
+  .bill-body { padding: 24px 28px 26px; font-family: var(--serif); font-size: 17.5px; line-height: 1.6; }
+  .bill-body p { font-size: inherit; font-family: inherit; max-width: none; margin: 0 0 13px; }
+  .bill-body .center { text-align: center; font-weight: 700; }
+  .bill-body .longtitle { font-style: italic; }
+  .bill-body .sechead { font-weight: 700; }
+  .bill-caption { font-size: 13.5px; color: var(--muted); margin: 8px 0 0; }
+
+  .example-q { font-family: var(--serif); font-size: 17.5px; line-height: 1.6; }
+  .example-q .labelline { display: block; margin-top: 14px; }
+  .example-q .quoteblock { display: block; margin-top: 10px; }
+  .wordcount { font-variant-numeric: tabular-nums; }
+
+  .flag {
+    background: var(--strip); border: 1px solid var(--rule);
+    padding: 14px 18px; margin: 16px 0; font-size: 15px; color: var(--muted); max-width: none;
+  }
+  .flag strong { color: var(--ink); }
+
+  .sources { font-size: 14px; color: var(--muted); border-top: 1px solid var(--rule); margin-top: 52px; padding-top: 16px; }
+  .sources a, p a { color: var(--ink); text-decoration-color: var(--strike); text-underline-offset: 3px; }
+  .sources a { color: var(--muted); }
+</style>
+
+<div class="wrap">
+  <div class="masthead">
+    <span>Ballot Honesty Project &middot; "Quote what you delete."</span>
+    <span class="right">For introduction, 2027 session</span>
+  </div>
+
+  <h1>Quote what you delete.</h1>
+  <p class="standfirst">The one-sentence rule, drafted as a bill a Minnesota legislator can introduce unchanged. The street version stays one sentence; this is its legal machinery.</p>
+
+  <div class="slogan">Any ballot question proposing to amend the Minnesota Constitution that would delete or modify existing constitutional language must quote that language verbatim in the question as it appears on the ballot.</div>
+  <p class="slogan-caption">The rule as you'd say it out loud. Everything below exists to make this sentence enforce itself.</p>
+
+  <div class="flag"><strong>Timing.</strong> The legislature has adjourned for 2026, so the earliest introduction is January 2027. This bill cannot touch HF 3900's November 2026 question. The exhibit fights this cycle; this bill makes sure there's no next one.</div>
+
+  <h2>Part 1 &middot; The bill</h2>
+  <p>Drafted to Minnesota Revisor conventions. As introduced, all of section 1 would appear underlined as new language; it's set in plain type here for readability.</p>
+
+  <div class="bill">
+    <div class="bill-strip"><span>House File ____ &middot; As drafted</span><span>New coding: Minn. Stat. ch. 204D</span></div>
+    <div class="bill-body">
+      <p class="longtitle">A bill for an act relating to elections; requiring a ballot question for a proposed constitutional amendment to quote the constitutional language it would delete or modify; providing a remedy; proposing coding for new law in Minnesota Statutes, chapter 204D.</p>
+      <p class="center">BE IT ENACTED BY THE LEGISLATURE OF THE STATE OF MINNESOTA:</p>
+
+      <p><span class="sechead">Section 1. [204D.151] BALLOT QUESTIONS; QUOTATION OF CONSTITUTIONAL LANGUAGE.</span></p>
+
+      <p><span class="sechead">Subdivision 1. Quotation required.</span> A ballot question submitting a proposed amendment to the Minnesota Constitution that would delete or modify existing language of the constitution must include, in the question as it appears on the ballot, a verbatim quotation of all language that the proposed amendment would delete or modify.</p>
+
+      <p><span class="sechead">Subd. 2. Presentation.</span> The quotation required by subdivision 1 must be immediately preceded by the words "This amendment would remove or change the following words of the Constitution:", which must appear on a line containing no other words. The quotation must begin on a new line following those words, must be enclosed in quotation marks, and must not be followed by any other language in the question. Language quoted from more than one location in the constitution must be quoted in the order in which it appears in the constitution.</p>
+
+      <p><span class="sechead">Subd. 3. Scope.</span> (a) Language is deleted if the proposed amendment would remove it from the constitution, whether or not other language would be added in its place.</p>
+      <p>(b) Language is modified if the proposed amendment would change any of its words or punctuation.</p>
+      <p>(c) A renumbering, relettering, or cross-reference correction made necessary solely by a change quoted under this section must not be separately quoted.</p>
+
+      <p><span class="sechead">Subd. 4. Length limits.</span> Language quoted under subdivision 1, and the introductory words required by subdivision 2, do not count toward any limit on the length of a ballot question imposed by statute, rule, or ballot layout standard.</p>
+
+      <p><span class="sechead">Subd. 5. Application to other laws.</span> This section applies to every ballot question described in subdivision 1, including a question whose wording is prescribed by another law, whether enacted before or after this section, unless the other law expressly cites this section and expressly exempts the question from its requirements in a section of law that contains no other provision.</p>
+
+      <p><span class="sechead">Subd. 6. Remedy.</span> A ballot question that does not include the quotation required by this section contains an omission subject to correction under section 204B.44. A proposed amendment must not be submitted to the people under a question that does not comply with this section.</p>
+
+      <p><span class="sechead">Sec. 2. EFFECTIVE DATE.</span> Section 1 is effective the day following final enactment and applies to proposed constitutional amendments submitted to the people at the state general election in 2028 and thereafter.</p>
+    </div>
+  </div>
+  <p class="bill-caption">Citation year ("Minnesota Statutes 2026") and section numbering are the Revisor's call at introduction; 204D.151 is proposed because section 204D.15 already governs titles and sample ballots.</p>
+
+  <h2>Part 2 &middot; What HF 3900's question would have looked like</h2>
+  <p>The demonstration that ends most arguments about workability. Keep the legislature's own 39-word pitch, word for word, and add only what the rule requires:</p>
+
+  <div class="bill">
+    <div class="bill-strip"><span>Worked example</span><span class="wordcount">127 words total</span></div>
+    <div class="bill-body example-q">
+      <span class="mandated">Shall the Minnesota Constitution be amended to increase the funding going to all school districts from the permanent school fund, which is a fund that supports school districts without raising individual income or property taxes, effective July 1, 2027?</span>
+      <span class="labelline">This amendment would remove or change the following words of the Constitution:</span>
+      <span class="quoteblock">"to secure the maximum return consistent with the maintenance of the perpetuity of the fund. The principal of the permanent school fund shall be perpetual and inviolate forever. This does not prevent the sale of investments at less than the cost to the fund; however, all losses not offset by gains shall be repaid to the fund from the interest and dividends earned thereafter. The net interest and dividends arising from the fund shall be distributed"</span>
+    </div>
+  </div>
+  <p class="bill-caption">39 words of their pitch + 12 words of preamble + 76 quoted words. It fits on a ballot with no legal obstacle; Minnesota imposes no word limit on questions. The question simply starts arguing with itself, which is the point.</p>
+
+  <h2>Part 3 &middot; Alternative: with word limits</h2>
+  <p>The rule guarantees the quote is present; it does not stop a drafter from wrapping it in 300 words of salesmanship. A word limit fixes that, when it is aimed at the right half of the question:</p>
+  <div class="bill">
+    <div class="bill-strip"><span>Optional subdivision &middot; If question length is ever capped</span></div>
+    <div class="bill-body">
+      <p><span class="sechead">Subd. 2a. Length of remainder.</span> Exclusive of the quotation required by subdivision 1 and the introductory words required by subdivision 2, a ballot question submitting a proposed constitutional amendment may not exceed 75 words.</p>
+    </div>
+  </div>
+  <p>Floor for the disclosure, ceiling for the pitch. A cap that excludes the quotation can never squeeze it out; a cap that includes it is a poison pill and must be refused, which is what subdivision 4 of the main bill guards against.</p>
+
+  <h2>Part 4 &middot; The constitutional version</h2>
+  <p>The statute can be repealed, or overridden in daylight under subdivision 5, by any future legislature. The permanent form is an amendment to Article IX, Section 1, the article that governs amendments. It must itself go to the voters, so it is the second step, not the first:</p>
+  <div class="bill">
+    <div class="bill-strip"><span>Proposed addition to Minn. Const. art. IX, &sect;1</span></div>
+    <div class="bill-body">
+      <p>A question submitting a proposed amendment that would delete or modify existing language of this constitution must quote that language verbatim in the question as it appears on the ballot. An amendment submitted under a question that does not comply with this requirement does not become part of this constitution, regardless of the vote on it.</p>
+    </div>
+  </div>
+  <p>Note the self-test: this amendment only adds language, so its own ballot question passes its own rule with nothing to quote. And its consequence clause is self-executing in the strongest sense: a concealing question doesn't just risk a lawsuit, it voids the ratification.</p>
+
+  <h2>Part 5 &middot; Drafting notes</h2>
+  <p>For the staff attorney who has to defend every word. Each choice, and what it's protecting against.</p>
+  <ol class="note-list">
+    <li><strong>"Verbatim quotation of all language," no materiality filter.</strong> Any filter ("material," "substantive," "key provisions") hands someone discretion over what voters see, and whoever holds that discretion is where the game moves next. Under this draft the only question a court ever faces is: are the words there or not. That is also why <em>League of Women Voters v. Ritchie</em> stops protecting concealment. Courts defer there because "misleading" has no standard; this section supplies one that requires no judgment to apply.</li>
+    <li><strong>The label line and the fixed anatomy (subd. 2).</strong> Presence is not prominence. Without this subdivision, a drafter complies by weaving the quoted words invisibly into sales copy. As drafted, every compliant question has the same three-part shape: the question, then a line holding only the twelve fixed introductory words, like an unbolded title, then the quotation, and nothing after it. Each requirement is binary: the label line contains no other words or it does; the quotation starts on a new line or it doesn't; language follows the quotation or it doesn't. The no-trailing-language rule closes the recency exploit, where a drafter resumes the pitch below the quotation so voters mark the ballot with the sales copy freshest in mind; instead, the last words a voter reads are the constitution's own. Line breaks are the one typographic device every ballot system, printer, and reproduction supports, and the structure degrades gracefully in audio balloting, where the fixed words carry the signal aloud.</li>
+    <li><strong>"Any of its words or punctuation" (subd. 3(b)).</strong> Pure textual trigger, no "legal effect" test, because a legal-effect test is a judgment call and judgment calls are the vulnerability. A comma can change meaning; if you change a comma, quote the provision. The cost of over-inclusion falls on the amendment's drafter, in public, which is self-punishing in exactly the right direction.</li>
+    <li><strong>The conforming-changes carve-out (subd. 3(c)), written as a prohibition.</strong> The one narrow exception, and the residual judgment we accept: "made necessary solely by" a quoted change. Without it, opponents manufacture absurdity ("your rule requires quoting forty renumbered cross-references"). And it says "must not," not "need not," because permission is itself an exploit: a drafter allowed to quote conforming noise would quote all forty trivial corrections voluntarily and drown the one deletion that matters. The prohibition keeps the quotation block pure signal. It cannot hide anything real, because a change with independent effect is not "made necessary solely by" a quoted change and so must be quoted under subdivision 1.</li>
+    <li><strong>Quoted words exempt from all length limits (subd. 4).</strong> Florida caps summaries at 75 words; HF 3900 deletes 76. In any capped regime the quotation requirement dies by arithmetic. This subdivision makes the rule cap-proof, including against caps invented later as a "reasonable compromise."</li>
+    <li><strong>The express-statement clause (subd. 5).</strong> No statute binds a future legislature, and HF 3900 itself shows the move: write the question into session law and argue the specific-and-later law silently beats the general one (the implied-repeal doctrine). This clause is a recognized drafting device for exactly that problem; the model is the federal Religious Freedom Restoration Act, 42 U.S.C. &sect;2000bb-3(b), which subjects later statutes to its rule "unless such law explicitly excludes such application by reference to this chapter." Courts treat such clauses as at least a strong interpretive default against implied override. It can't prevent an exemption; it forces one into the open. An exempting law must name this section, whose title puts "quotation of constitutional language" into the exempting bill's own text, and must do it in a stand-alone section containing nothing else, so the exemption can never hide inside an omnibus provision. It must stand alone on the page, photographable, with a recorded vote attached. The clause deliberately stops short of scripting a confession sentence for the future law to recite: dictating the rhetoric of future statutes is unenforceable entrenchment rather than an interpretive default, argumentative phrasing inside statute text reads as a stunt to the staff attorneys who decide whether a bill is serious, and required natural-language phrasing invites litigation over near-miss wordings, reintroducing the judgment calls this section exists to eliminate. The law stays neutral; the scorecard does the translating.</li>
+    <li><strong>The 204B.44 hook (subd. 6).</strong> Section 204B.44 already lets any individual petition the supreme court over ballot "errors and omissions." Today such petitions die against the <em>LWV</em> deference standard. This subdivision converts the claim from "the question is misleading" (a judgment courts refuse to make) to "the question omits the quotation required by section 204D.151" (a fact). The second sentence sets the remedy: fix the question or the amendment waits.</li>
+    <li><strong>2028 effective date.</strong> Applies to the next amendment cycle, drafted before anyone knows whose amendment it will bite. That is the neutrality argument in procedural form, and it denies opponents the claim that the bill targets any pending measure.</li>
+    <li><strong>Why the quotation, not a strikethrough markup, on the ballot itself.</strong> The redline format is right for documents and wrong for ballots. Accessible voting machines read questions aloud, and speech has no strikethrough: struck text is either read as live text or skipped, both worse than the disease. County ballot systems guarantee uniform type, not typography, so a rule depending on a strikethrough glyph surviving every printer, reprint, and newspaper reproduction is no longer self-executing. And a redline mandates disclosure of additions too, which no drafter ever conceals; the mandate should cover only what no drafter will volunteer. A companion option for the layers that do have real typography: require the secretary of state to publish the full marked-up section text in the sample ballot under section 204D.15, subdivision 3.</li>
+  </ol>
+
+  <div class="sources">
+    Sources: <a href="https://www.revisor.mn.gov/statutes/cite/204D.15">Minn. Stat. &sect;204D.15</a> &middot; <a href="https://www.revisor.mn.gov/statutes/cite/204B.44">Minn. Stat. &sect;204B.44</a> &middot; <a href="https://www.revisor.mn.gov/bills/94/2026/0/HF/3900/versions/3/">HF 3900, 3rd Engrossment (2026)</a> &middot; <a href="https://www.revisor.mn.gov/constitution/">Minn. Const. art. IX, &sect;1; art. XI, &sect;8</a> &middot; League of Women Voters Minn. v. Ritchie, 819 N.W.2d 636 (Minn. 2012) &middot; Limmer v. Ritchie, 819 N.W.2d 622 (Minn. 2012) &middot; Fla. Stat. &sect;101.161 (title/summary caps)
+  </div>
+</div>
+

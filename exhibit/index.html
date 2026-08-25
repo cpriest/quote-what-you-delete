@@ -1,0 +1,228 @@
+<title>Perpetual and Inviolate</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700;800&family=Tinos:ital,wght@0,400;0,700;1,400&display=swap">
+<style>
+  :root {
+    --ground: #EDEBE4;
+    --paper: #FFFFFF;
+    --ink: #20242B;
+    --muted: #646B77;
+    --strike: #9E1B1B;
+    --rule: #D6D3CA;
+    --strip: #F0EFEA;
+    --sans: "Public Sans", "Segoe UI", Arial, sans-serif;
+    --serif: "Tinos", "Times New Roman", Times, serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #16181D;
+      --paper: #1F232B;
+      --ink: #E8E5DC;
+      --muted: #9AA0AB;
+      --strike: #E0564F;
+      --rule: #363B44;
+      --strip: #272C34;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #16181D;
+    --paper: #1F232B;
+    --ink: #E8E5DC;
+    --muted: #9AA0AB;
+    --strike: #E0564F;
+    --rule: #363B44;
+    --strip: #272C34;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: var(--sans);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+  }
+  .wrap { max-width: 1020px; margin: 0 auto; padding: 40px 24px 72px; }
+
+  .masthead {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap;
+    font-size: 13px; font-weight: 600; letter-spacing: 0.13em;
+    text-transform: uppercase; color: var(--muted);
+    padding-bottom: 14px; border-bottom: 2px solid var(--ink);
+  }
+  .masthead .bill { color: var(--ink); }
+
+  h1 {
+    font-size: clamp(30px, 5vw, 46px); line-height: 1.12; font-weight: 800;
+    letter-spacing: -0.015em; margin: 26px 0 30px; max-width: 20ch;
+    text-wrap: balance;
+  }
+  h1 .no-mention { color: var(--strike); }
+
+  .panels { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: start; }
+  @media (max-width: 800px) { .panels { grid-template-columns: 1fr; } }
+
+  .panel-label {
+    font-size: 13px; font-weight: 700; letter-spacing: 0.13em;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 10px;
+  }
+
+  .ballot { background: var(--paper); border: 3px solid var(--ink); }
+  .ballot-strip {
+    background: var(--strip); border-bottom: 2px solid var(--ink);
+    padding: 11px 22px; font-size: 12.5px; font-weight: 700;
+    letter-spacing: 0.11em; text-transform: uppercase;
+  }
+  .ballot-body { padding: 24px 26px 26px; display: flex; flex-direction: column; gap: 18px; }
+  .ballot-title { font-size: 22px; font-weight: 700; line-height: 1.3; }
+  .ballot-q { font-size: 18px; line-height: 1.55; }
+  .ballot-choices { display: flex; flex-direction: column; gap: 14px; padding-top: 8px; }
+  .choice { display: flex; align-items: center; gap: 13px; font-size: 17px; font-weight: 700; letter-spacing: 0.02em; }
+  .oval { width: 32px; height: 16px; border: 2.5px solid var(--ink); border-radius: 50%; flex: none; }
+  .panel-caption { font-size: 13.5px; color: var(--muted); margin-top: 10px; line-height: 1.4; }
+
+  .engross { background: var(--paper); border: 1px solid var(--rule); box-shadow: 0 1px 0 var(--rule); }
+  .engross-strip {
+    border-bottom: 1px solid var(--rule);
+    padding: 12px 20px; font-size: 12px; font-weight: 700;
+    letter-spacing: 0.09em; text-transform: uppercase; color: var(--muted);
+    display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: baseline;
+  }
+  .legend { font-weight: 600; letter-spacing: 0.02em; text-transform: none; font-size: 13px; }
+  .legend .lx { text-decoration: line-through; text-decoration-color: var(--strike); text-decoration-thickness: 2px; }
+  .legend .la { text-decoration: underline; text-underline-offset: 3px; }
+  .engross-body { padding: 24px 26px 22px; font-family: var(--serif); display: flex; flex-direction: column; gap: 18px; }
+  .del-hero {
+    font-size: clamp(24px, 3.2vw, 31px); line-height: 1.3; font-weight: 700;
+    text-decoration: line-through; text-decoration-color: var(--strike); text-decoration-thickness: 4px;
+  }
+  .del {
+    font-size: 18.5px; line-height: 1.45;
+    text-decoration: line-through; text-decoration-color: var(--strike); text-decoration-thickness: 2.5px;
+  }
+  .add { font-size: 18.5px; line-height: 1.45; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1.5px; }
+  .engross-note {
+    font-family: var(--sans); font-size: 14px; line-height: 1.45;
+    color: var(--muted); border-top: 1px solid var(--rule); padding-top: 14px;
+  }
+  .engross-note p { margin: 0 0 8px; }
+  .engross-note p:last-child { margin-bottom: 0; }
+  .engross-note strong { color: var(--ink); }
+
+  .tally {
+    display: flex; gap: 28px; margin-top: 36px; flex-wrap: wrap;
+    border-top: 2px solid var(--ink); padding-top: 22px;
+  }
+  .stat { flex: 1 1 280px; display: flex; align-items: center; gap: 18px; }
+  .stat .n { font-size: 62px; font-weight: 800; line-height: 1; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+  .stat.zero .n { color: var(--strike); }
+  .stat .lbl { font-size: 16px; line-height: 1.35; color: var(--muted); font-weight: 600; max-width: 320px; }
+
+  .kicker { font-size: clamp(20px, 2.8vw, 25px); font-weight: 800; line-height: 1.35; letter-spacing: -0.01em; margin-top: 28px; max-width: 56ch; }
+  .kicker .q { color: var(--strike); }
+  .fix { font-size: clamp(17px, 2.2vw, 20px); font-weight: 700; line-height: 1.4; margin-top: 14px; max-width: 60ch; }
+  .fix .q { color: var(--strike); }
+  .fair { font-size: 15px; color: var(--muted); line-height: 1.45; margin-top: 10px; max-width: 70ch; }
+
+  .explainer { max-width: 680px; margin-top: 64px; }
+  .explainer h2 {
+    font-size: 15px; font-weight: 700; letter-spacing: 0.11em; text-transform: uppercase;
+    border-top: 1px solid var(--rule); padding-top: 18px; margin: 40px 0 12px;
+  }
+  .explainer p { font-size: 16.5px; margin: 0 0 14px; }
+  .explainer ul { margin: 0 0 14px; padding-left: 22px; }
+  .explainer li { font-size: 16.5px; margin-bottom: 8px; }
+  .rulebox {
+    background: var(--paper); border-left: 4px solid var(--strike);
+    padding: 18px 22px; margin: 18px 0;
+    font-family: var(--serif); font-size: 19px; line-height: 1.5;
+  }
+  .sources { font-size: 14px; color: var(--muted); border-top: 1px solid var(--rule); margin-top: 48px; padding-top: 16px; }
+  .sources a { color: var(--muted); }
+  .explainer a { color: var(--ink); text-decoration-color: var(--strike); text-underline-offset: 3px; }
+</style>
+
+<div class="wrap">
+  <div class="masthead">
+    <span>Minnesota general election &middot; Nov. 3, 2026</span>
+    <span class="bill">HF 3900 &middot; Constitutional amendment</span>
+  </div>
+
+  <h1>The ballot question <span class="no-mention">doesn't mention</span> what it deletes.</h1>
+
+  <div class="panels">
+    <div class="panel">
+      <div class="panel-label">What voters will see</div>
+      <div class="ballot">
+        <div class="ballot-strip">Official ballot &middot; Constitutional amendment</div>
+        <div class="ballot-body">
+          <div class="ballot-title">Increasing funding to school districts.</div>
+          <div class="ballot-q">"Shall the Minnesota Constitution be amended to increase the funding going to all school districts from the permanent school fund, which is a fund that supports school districts without raising individual income or property taxes, effective July&nbsp;1, 2027?"</div>
+          <div class="ballot-choices">
+            <div class="choice"><span class="oval"></span> Yes</div>
+            <div class="choice"><span class="oval"></span> No</div>
+          </div>
+        </div>
+      </div>
+      <div class="panel-caption">Title and question verbatim, written into the bill by the legislature itself.</div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-label">What the amendment does</div>
+      <div class="engross">
+        <div class="engross-strip">
+          <span>Minn. Const. art. XI, &sect;8</span>
+          <span class="legend"><span class="lx">struck</span> = deleted &middot; <span class="la">underlined</span> = added</span>
+        </div>
+        <div class="engross-body">
+          <div class="del-hero">The principal of the permanent school fund shall be perpetual and inviolate forever.</div>
+          <div class="del">&hellip;to secure the maximum return consistent with the maintenance of the perpetuity of the fund.</div>
+          <div class="del">&hellip;all losses not offset by gains shall be repaid to the fund from the interest and dividends earned thereafter.</div>
+          <div class="add">&hellip;and managed as a perpetual financial resource&hellip;</div>
+          <div class="add">Reasonable and necessary administrative costs associated with managing the fund or school trust lands may be paid from the fund in the manner prescribed by law.</div>
+          <div class="add">The distribution policy shall be prescribed by law&hellip;</div>
+          <div class="engross-note">
+            <p><strong>"Perpetual" survives as a goal, not a rule.</strong> The struck text ordered losses repaid to the fund. The new text sets a management aim and leaves the rest to statute.</p>
+            <p><strong>The payout rate isn't in the amendment.</strong> The new 4.5% distribution sits in ordinary statute (Minn. Stat. &sect;11A.16, subd. 5, as amended). A future legislature can change it by simple majority.</p>
+          </div>
+        </div>
+      </div>
+      <div class="panel-caption">Every quoted word above is from HF 3900, 3rd Engrossment.</div>
+    </div>
+  </div>
+
+  <div class="tally">
+    <div class="stat"><span class="n">76</span><span class="lbl">words deleted from Article&nbsp;XI, &sect;8</span></div>
+    <div class="stat zero"><span class="n">0</span><span class="lbl">mentions of any deletion in the ballot question</span></div>
+  </div>
+
+  <div class="kicker">Sell an investment this way and it's securities fraud. <span class="q">On a ballot, it's legal.</span></div>
+  <div class="fix">The fix is one sentence: a ballot question that deletes constitutional language must <span class="q">quote the words it deletes</span>.</div>
+  <div class="fair">A total-return endowment is a defensible way to run a school trust. Concealing the trade from voters is not.</div>
+
+  <div class="explainer">
+    <h2>What is happening</h2>
+    <p>HF 3900 puts a constitutional amendment on Minnesota's November 2026 ballot. It rewrites the Permanent School Fund clause of the constitution: out goes the requirement that the fund's principal stay "perpetual and inviolate forever" and that investment losses be repaid from future earnings; in comes a total-return payout whose rate, definitions, and policy live in ordinary statute.</p>
+    <p>Voters won't learn any of that from the ballot. The question describes a benefit, increased school funding with no new taxes, and says nothing about what is being removed. The legislature wrote the title and question into the bill itself, and under <em>Limmer v. Ritchie</em> (Minn. 2012), no one else can revise that framing. Under <em>League of Women Voters v. Ritchie</em> (Minn. 2012), courts defer to it almost completely. Two justices in that case called a similar gap between ballot language and actual effect "bait and switch." The court let it through anyway.</p>
+    <p>There's a familiar name for this structure in the investment world: material omission. A prospectus made entirely of true sentences is still fraud if it leaves out what a reasonable buyer would need to know. Ballot questions face no such standard.</p>
+
+    <h2>What changes hands</h2>
+    <ul>
+      <li>The payout rate (4.5% of the fund's trailing three-year average value) becomes a statute a future legislature can change by simple majority.</li>
+      <li>"Reasonable and necessary" administrative costs for managing the fund <em>or school trust lands</em> become payable from the fund, with the legislature defining reasonable.</li>
+      <li>The distribution policy as a whole moves from a self-executing constitutional formula to whatever the law says at the time.</li>
+    </ul>
+    <p>The endowment model itself is mainstream, and income-only rules do distort how a fund invests. If the 4.5% rate belongs anywhere, it belongs in the constitution the amendment is already rewriting. The bill puts it in statute instead.</p>
+
+    <h2>The proposed rule</h2>
+    <div class="rulebox">Any ballot question proposing to amend the Minnesota Constitution that would delete or modify existing constitutional language must quote that language verbatim in the question as it appears on the ballot.</div>
+    <p>It is self-executing: either the deleted words appear in the question or they don't. No reviewing body, no budget, no discretion anywhere. It would have stopped this ballot question cold, and it ignores honest ones. The 1988 lottery amendment and the 2008 Legacy Amendment added new language and described it accurately; this rule wouldn't have touched either.</p>
+    <p>The rule now exists as a bill ready for the 2027 session: a new section 204D.151 of the election code. Every compliant question gets the same fixed shape, the question, then a label line reading "This amendment would remove or change the following words of the Constitution:", then the quotation, and nothing after it. The quoted words are exempt from any length limit, any future exemption must be enacted as a stand-alone section naming the rule it escapes, and any citizen can enforce compliance through the existing ballot-error statute.</p>
+
+    <div class="sources">
+      Sources: <a href="https://www.revisor.mn.gov/bills/94/2026/0/HF/3900/versions/3/">HF 3900, 3rd Engrossment (2026)</a> &middot; <a href="https://www.revisor.mn.gov/constitution/">Minnesota Constitution, art. XI, &sect;8</a> &middot; League of Women Voters Minn. v. Ritchie, 819 N.W.2d 636 (Minn. 2012) &middot; Limmer v. Ritchie, 819 N.W.2d 622 (Minn. 2012)
+    </div>
+  </div>
+</div>

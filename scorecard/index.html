@@ -1,0 +1,206 @@
+<title>Ballot Question Scorecard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Tinos:ital,wght@0,400;0,700;1,400&display=swap">
+<style>
+  :root {
+    --ground: #EDEBE4; --paper: #FFFFFF; --ink: #20242B; --muted: #646B77;
+    --strike: #9E1B1B; --rule: #D6D3CA; --strip: #F0EFEA;
+    --sans: "Public Sans", "Segoe UI", Arial, sans-serif;
+    --serif: "Tinos", "Times New Roman", Times, serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #16181D; --paper: #1F232B; --ink: #E8E5DC; --muted: #9AA0AB;
+      --strike: #E0564F; --rule: #363B44; --strip: #272C34;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #16181D; --paper: #1F232B; --ink: #E8E5DC; --muted: #9AA0AB;
+    --strike: #E0564F; --rule: #363B44; --strip: #272C34;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--ground); color: var(--ink); font-family: var(--sans); line-height: 1.55; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 780px; margin: 0 auto; padding: 40px 24px 80px; }
+  .masthead {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap;
+    font-size: 13px; font-weight: 600; letter-spacing: 0.13em; text-transform: uppercase;
+    color: var(--muted); padding-bottom: 14px; border-bottom: 2px solid var(--ink);
+  }
+  .masthead .right { color: var(--ink); }
+  h1 { font-size: clamp(30px, 5vw, 42px); line-height: 1.12; font-weight: 800; letter-spacing: -0.015em; margin: 26px 0 10px; text-wrap: balance; }
+  .standfirst { font-size: 17px; color: var(--muted); margin: 0 0 8px; max-width: 62ch; }
+  h2 { font-size: 15px; font-weight: 700; letter-spacing: 0.11em; text-transform: uppercase; border-top: 1px solid var(--rule); padding-top: 20px; margin: 44px 0 14px; }
+  p { font-size: 16.5px; margin: 0 0 14px; max-width: 66ch; }
+  ol.criteria { margin: 0 0 14px; padding-left: 0; list-style: none; counter-reset: crit; max-width: none; }
+  ol.criteria li {
+    counter-increment: crit; background: var(--paper); border: 1px solid var(--rule);
+    padding: 16px 18px 16px 58px; margin-bottom: 10px; position: relative; font-size: 16px;
+  }
+  ol.criteria li::before {
+    content: counter(crit); position: absolute; left: 18px; top: 16px;
+    width: 26px; height: 26px; border: 2px solid var(--ink); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 14px;
+  }
+  ol.criteria .q { font-weight: 700; display: block; }
+  ol.criteria .cond { color: var(--muted); font-size: 14.5px; display: block; margin-top: 4px; }
+
+  .rules { background: var(--paper); border-left: 4px solid var(--ink); padding: 16px 20px; margin: 16px 0; }
+  .rules p { font-size: 15.5px; margin-bottom: 10px; }
+  .rules p:last-child { margin-bottom: 0; }
+  .rules strong { }
+
+  /* Entry cards */
+  .entry { background: var(--paper); border: 1px solid var(--rule); box-shadow: 0 1px 0 var(--rule); margin: 18px 0 26px; }
+  .entry.featured { border: 2px solid var(--ink); }
+  .entry-head {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap;
+    padding: 14px 20px; border-bottom: 1px solid var(--rule); background: var(--strip);
+  }
+  .entry-head .name { font-weight: 800; font-size: 17px; }
+  .entry-head .score { font-weight: 800; font-size: 17px; font-variant-numeric: tabular-nums; }
+  .entry-head .score.bad { color: var(--strike); }
+  .entry-q { padding: 14px 20px 4px; font-family: var(--serif); font-size: 15.5px; line-height: 1.5; color: var(--muted); }
+  .entry-q b { color: var(--ink); font-weight: 700; }
+  .rows { padding: 10px 20px 16px; }
+  .row { display: flex; gap: 12px; align-items: baseline; padding: 7px 0; border-top: 1px dotted var(--rule); font-size: 15px; }
+  .row:first-child { border-top: 0; }
+  .chip {
+    flex: none; width: 74px; text-align: center; font-size: 11.5px; font-weight: 800;
+    letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 0; border-radius: 3px;
+  }
+  .chip.fail { background: var(--strike); color: #FFFFFF; }
+  .chip.pass { border: 1.5px solid var(--ink); color: var(--ink); }
+  .chip.na { border: 1.5px solid var(--rule); color: var(--muted); }
+  .chip.pending { background: var(--strip); border: 1.5px dashed var(--muted); color: var(--muted); }
+  .row .ev { color: var(--muted); }
+  .row .ev b { color: var(--ink); font-weight: 600; }
+  .row .cnum { flex: none; width: 16px; font-weight: 800; }
+
+  .finding { border-left: 4px solid var(--strike); background: var(--paper); padding: 14px 18px; margin: 14px 0; }
+  .finding p { font-size: 15.5px; margin-bottom: 8px; }
+  .finding p:last-child { margin-bottom: 0; }
+  .draftband { border: 2px dashed var(--strike); color: var(--strike); font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; padding: 10px 14px; margin-top: 20px; font-size: 13px; }
+
+  .foot { font-size: 14px; color: var(--muted); border-top: 1px solid var(--rule); margin-top: 52px; padding-top: 16px; }
+  .foot a { color: var(--muted); }
+</style>
+
+<div class="wrap">
+  <div class="masthead">
+    <span>Ballot Honesty Project &middot; "Quote what you delete."</span>
+    <span class="right">Criteria v1.0 &middot; DRAFT &middot; freeze at launch</span>
+  </div>
+
+  <div class="draftband">Draft &middot; under review &middot; wording may change until the freeze</div>
+  <h1>Ballot Question Scorecard</h1>
+  <p class="standfirst">Six yes/no questions, asked of every Minnesota constitutional ballot question, the same way every time. The criteria freeze at public launch, before anything new is graded. Transparency scoring measures whether the question tells voters what the amendment does. It does not measure whether the amendment is good policy, and the calibration entries below prove the two are different things.</p>
+
+  <h2>The six criteria</h2>
+  <ol class="criteria">
+    <li><span class="q">Does the question quote the constitutional language the amendment deletes or modifies?</span><span class="cond">Applies only when existing constitutional language is deleted or modified. A fail cites the deleted words and the question's silence.</span></li>
+    <li><span class="q">Does the ballot title name the thing being changed, rather than only a predicted benefit?</span><span class="cond">Always applies. "Increasing funding to school districts" is a prediction; "Photo Identification Required for Voting" is a mechanism.</span></li>
+    <li><span class="q">If any control moves from the constitution to ordinary statute, does the question say so?</span><span class="cond">Applies only when the amendment converts a constitutional command into something the legislature can later change by law.</span></li>
+    <li><span class="q">If the amendment gives anyone new authority or creates a new system, does the question identify it?</span><span class="cond">Applies when new authority or machinery is created. The least mechanical criterion; close calls are flagged, not hidden (see v1.1 note below).</span></li>
+    <li><span class="q">If new spending is authorized against a protected or dedicated fund, does the question disclose it?</span><span class="cond">Applies only when the amendment opens a protected fund to a new category of spending.</span></li>
+    <li><span class="q">Does the question avoid asserting facts that would be true whether the amendment passes or fails?</span><span class="cond">Always applies. A fact identical under yes and no carries no information about how to vote; its only function is implication. Test each clause: "still true if this fails?"</span></li>
+  </ol>
+
+  <h2>How scoring works</h2>
+  <div class="rules">
+    <p><strong>Frozen criteria.</strong> These six are v1.0; the freeze is stamped at public launch. Changes create a new version that applies only to questions scored after the change. No criterion is ever adjusted to reach a preferred result.</p>
+    <p><strong>Every question, both directions.</strong> Every statewide constitutional ballot question gets scored, including ones we would vote for. When a question we support scores badly, the bad score gets published. That is the entire value of this page.</p>
+    <p><strong>Documentary evidence.</strong> Every FAIL must cite verbatim text from the proposing law or the constitution. No fail stands on characterization alone.</p>
+    <p><strong>Scores are not comparable across questions.</strong> Criteria that don't apply are marked N/A and excluded. The per-criterion verdicts are the substance; the ratio is a summary. The notable case is a question where every criterion applies and every criterion fails.</p>
+  </div>
+
+  <h2>Entry #1 &middot; The 2026 school fund amendment (HF 3900)</h2>
+  <div class="entry featured">
+    <div class="entry-head"><span class="name">"Increasing funding to school districts." &middot; Nov. 3, 2026</span><span class="score bad">0 of 6</span></div>
+    <div class="entry-q"><b>Question:</b> "Shall the Minnesota Constitution be amended to increase the funding going to all school districts from the permanent school fund, which is a fund that supports school districts without raising individual income or property taxes, effective July 1, 2027?"</div>
+    <div class="rows">
+      <div class="row"><span class="cnum">1</span><span class="chip fail">Fail</span><span class="ev">Deletes 76 words of art. XI, &sect;8, including <b>"The principal of the permanent school fund shall be perpetual and inviolate forever."</b> The question quotes none of it and does not mention that anything is deleted.</span></div>
+      <div class="row"><span class="cnum">2</span><span class="chip fail">Fail</span><span class="ev">Title is a predicted benefit. It names no fund provision, no deletion, no mechanism.</span></div>
+      <div class="row"><span class="cnum">3</span><span class="chip fail">Fail</span><span class="ev">The distribution formula moves from the constitution (net interest and dividends) to statute: <b>"The distribution policy shall be prescribed by law."</b> The question is silent.</span></div>
+      <div class="row"><span class="cnum">4</span><span class="chip fail">Fail</span><span class="ev">The legislature gains rate-setting power over the new 4.5% payout (statutory, simple majority); administrative-cost payments run <b>"in the manner prescribed by law."</b> The question names no one.</span></div>
+      <div class="row"><span class="cnum">5</span><span class="chip fail">Fail</span><span class="ev"><b>"Reasonable and necessary administrative costs associated with managing the fund or school trust lands may be paid from the fund"</b> — a new category of spending against the protected corpus, undisclosed.</span></div>
+      <div class="row"><span class="cnum">6</span><span class="chip fail">Fail</span><span class="ev"><b>"...without raising individual income or property taxes"</b> is true today, true under yes, true under no. Invariant under the vote; pure implication.</span></div>
+    </div>
+  </div>
+  <p>Every criterion applies. Every criterion fails. This is the only question on this page with that distinction.</p>
+
+  <h2>Calibration &middot; four historical questions, same rubric</h2>
+  <p>Scored retrospectively to demonstrate the rubric measures transparency, not politics. Sources: the proposing session laws, linked below.</p>
+
+  <div class="entry">
+    <div class="entry-head"><span class="name">Marriage amendment &middot; 2012 (rejected by voters)</span><span class="score">2 of 2</span></div>
+    <div class="entry-q"><b>Question:</b> "Shall the Minnesota Constitution be amended to provide that only a union of one man and one woman shall be valid or recognized as a marriage in Minnesota?" <b>Title:</b> "Recognition of Marriage Solely Between One Man and One Woman"</div>
+    <div class="rows">
+      <div class="row"><span class="cnum">1</span><span class="chip na">N/A</span><span class="ev">Added new language only; nothing deleted or modified.</span></div>
+      <div class="row"><span class="cnum">2</span><span class="chip pass">Pass</span><span class="ev">Title names the mechanism exactly.</span></div>
+      <div class="row"><span class="cnum">3</span><span class="chip na">N/A</span><span class="ev">No constitutional control moved to statute.</span></div>
+      <div class="row"><span class="cnum">4</span><span class="chip na">N/A</span><span class="ev">No new authority or machinery created.</span></div>
+      <div class="row"><span class="cnum">5</span><span class="chip na">N/A</span><span class="ev">No protected fund involved.</span></div>
+      <div class="row"><span class="cnum">6</span><span class="chip pass">Pass</span><span class="ev">The question restates the operative text nearly verbatim; no invariant assertions.</span></div>
+    </div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-head"><span class="name">Photo ID amendment &middot; 2012 (rejected by voters)</span><span class="score">2 of 3</span></div>
+    <div class="entry-q"><b>Question:</b> "Shall the Minnesota Constitution be amended to require all voters to present valid photo identification to vote and to require the state to provide free identification to eligible voters, effective July 1, 2013?" <b>Title:</b> "Photo Identification Required for Voting."</div>
+    <div class="rows">
+      <div class="row"><span class="cnum">1</span><span class="chip na">N/A</span><span class="ev">Added new language only. (See the correction below; this surprised us.)</span></div>
+      <div class="row"><span class="cnum">2</span><span class="chip pass">Pass</span><span class="ev">Title names the mechanism.</span></div>
+      <div class="row"><span class="cnum">3</span><span class="chip na">N/A</span><span class="ev">No existing constitutional control moved to statute.</span></div>
+      <div class="row"><span class="cnum">4</span><span class="chip fail">Fail</span><span class="ev">The full text created a provisional-ballot system and a <b>"substantially equivalent identity and eligibility verification"</b> standard for absentee voting, machinery the question never mentions. Two justices called the gap "bait and switch" (LWV v. Ritchie, dissent).</span></div>
+      <div class="row"><span class="cnum">5</span><span class="chip na">N/A</span><span class="ev">No protected fund involved.</span></div>
+      <div class="row"><span class="cnum">6</span><span class="chip pass">Pass</span><span class="ev">Both asserted requirements are effects of passage; nothing invariant.</span></div>
+    </div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-head"><span class="name">Legacy Amendment &middot; 2008 (adopted)</span><span class="score">1 of 2</span></div>
+    <div class="entry-q"><b>Question:</b> "...to dedicate funding to protect our drinking water sources ... by increasing the sales and use tax rate beginning July 1, 2009, by three-eighths of one percent on taxable sales until the year 2034?" <b>Title:</b> "Clean Water, Wildlife, Cultural Heritage, and Natural Areas"</div>
+    <div class="rows">
+      <div class="row"><span class="cnum">1</span><span class="chip na">N/A</span><span class="ev">Added a new section only.</span></div>
+      <div class="row"><span class="cnum">2</span><span class="chip fail">Fail</span><span class="ev">The title is all benefit and no mechanism: it does not mention a tax. The question, to its credit, states the rate and the end date plainly.</span></div>
+      <div class="row"><span class="cnum">3</span><span class="chip na">N/A</span><span class="ev">Dedication moves control into the constitution, not out of it.</span></div>
+      <div class="row"><span class="cnum">4</span><span class="chip na">N/A</span><span class="ev">Constrains spending rather than granting new discretion. A close call, flagged per the criterion 4 note.</span></div>
+      <div class="row"><span class="cnum">5</span><span class="chip na">N/A</span><span class="ev">Creates funds; raids none.</span></div>
+      <div class="row"><span class="cnum">6</span><span class="chip pass">Pass</span><span class="ev">Every clause describes an effect of passage: the tax, the rate, the dates, the dedications.</span></div>
+    </div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-head"><span class="name">State lottery amendment &middot; 1988 (adopted)</span><span class="score">3 of 5 &middot; 1 pending</span></div>
+    <div class="entry-q"><b>Question:</b> "Shall the Minnesota Constitution be amended to permit the legislature to authorize a lottery operated by the state?"</div>
+    <div class="rows">
+      <div class="row"><span class="cnum">1</span><span class="chip fail">Fail</span><span class="ev">This amendment modified existing text: art. XIII, &sect;5's flat ban (<b>"The legislature shall not authorize any lottery or the sale of lottery tickets"</b>) gained an exception. The question describes the change honestly ("permit" concedes a ban exists) but quotes nothing.</span></div>
+      <div class="row"><span class="cnum">2</span><span class="chip pending">Pending</span><span class="ev">The 1988 ballot title has not yet been verified from primary sources; scored when it is.</span></div>
+      <div class="row"><span class="cnum">3</span><span class="chip pass">Pass</span><span class="ev">The shift is the disclosed point: "permit the legislature to authorize."</span></div>
+      <div class="row"><span class="cnum">4</span><span class="chip pass">Pass</span><span class="ev">The new authority-holder is named in the question: the legislature.</span></div>
+      <div class="row"><span class="cnum">5</span><span class="chip na">N/A</span><span class="ev">No protected fund involved.</span></div>
+      <div class="row"><span class="cnum">6</span><span class="chip pass">Pass</span><span class="ev">No invariant assertions.</span></div>
+    </div>
+  </div>
+
+  <h2>What calibration taught us (including where we were wrong)</h2>
+  <div class="finding">
+    <p><strong>Transparency is not policy agreement.</strong> The most controversial question on this page, the 2012 marriage amendment, scores perfectly: whatever you think of the policy, the question said exactly what the amendment did, and voters rejected it anyway. The beloved Legacy Amendment loses a point for a title that sells benefits and hides the tax. If this rubric were a partisan weapon, those two results would be reversed.</p>
+  </div>
+  <div class="finding">
+    <p><strong>Correction: we previously claimed the quotation rule "would have caught" the 2012 photo ID question.</strong> Checked against the session law, that's wrong: the amendment only added text, so a quote-what-you-delete rule would not have applied. Its deception was hidden <em>additions</em> (the provisional-ballot and absentee-verification machinery), which this scorecard catches at criterion 4, and which the proposed &sect;204D.151 does not reach. That's a real limit of the rule, now stated plainly.</p>
+  </div>
+  <div class="finding">
+    <p><strong>Correction: we previously claimed the 1988 lottery question "wouldn't have been touched" by the rule.</strong> Also wrong: that amendment modified an existing ban, so the rule would have required quoting one sentence. The interesting part: the honest 1988 question could have carried that quotation at zero cost. The rule burdens honest questions trivially and concealing ones fatally, which is the design working.</p>
+  </div>
+  <div class="finding">
+    <p><strong>Open item for v1.1.</strong> Criterion 4's applicability test ("does this create new authority?") is the least mechanical of the six, and hidden-addition deception (photo ID's trick) deserves a sharper instrument than it currently gets. Proposals will be versioned, dated, and applied prospectively only.</p>
+  </div>
+
+  <div class="foot">
+    Sources: <a href="https://www.revisor.mn.gov/bills/94/2026/0/HF/3900/versions/3/">HF 3900, 3rd Engrossment (2026)</a> &middot; <a href="https://www.revisor.mn.gov/laws/2011/0/88/">2011 Laws ch. 88 (marriage)</a> &middot; <a href="https://www.revisor.mn.gov/laws/2012/0/167/">2012 Laws ch. 167 (photo ID)</a> &middot; <a href="https://www.revisor.mn.gov/laws/2008/0/151/">2008 Laws ch. 151 (Legacy)</a> &middot; <a href="https://www.revisor.mn.gov/laws/1988/0/690/">1988 Laws ch. 690 (lottery)</a> &middot; <a href="https://www.revisor.mn.gov/constitution/">Minnesota Constitution</a> &middot; League of Women Voters Minn. v. Ritchie, 819 N.W.2d 636 (Minn. 2012)
+  </div>
+</div>
+
