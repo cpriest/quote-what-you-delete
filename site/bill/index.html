@@ -1,4 +1,18 @@
-<title>Quote What You Delete</title>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="description" content="The verbatim-quotation rule drafted as an introduceable Minnesota bill, with a worked example, fallback clauses, and drafting notes.">
+<link rel="canonical" href="https://quotewhatyoudelete.org/bill/">
+<meta property="og:title" content="The Bill - Quote What You Delete">
+<meta property="og:description" content="The verbatim-quotation rule drafted as an introduceable Minnesota bill, with a worked example, fallback clauses, and drafting notes.">
+<meta property="og:image" content="https://quotewhatyoudelete.org/assets/hf3900-exhibit.png">
+<meta property="og:url" content="https://quotewhatyoudelete.org/bill/">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>&#x1F5F3;&#xFE0F;</text></svg>">
+<title>The Bill - Quote What You Delete</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap">
@@ -92,11 +106,53 @@
   .sources { font-size: 14px; color: var(--muted); border-top: 1px solid var(--rule); margin-top: 52px; padding-top: 16px; }
   .sources a, p a { color: var(--ink); text-decoration-color: var(--strike); text-underline-offset: 3px; }
   .sources a { color: var(--muted); }
+  .sitehead { border-bottom: 2px solid var(--ink); padding: 18px 0 14px; display: flex; justify-content: space-between; align-items: baseline; gap: 14px; flex-wrap: wrap; }
+  .brand { font-weight: 800; font-size: 17px; letter-spacing: -0.01em; text-decoration: none; color: var(--ink); }
+  .brand .tag { font-weight: 400; font-style: italic; font-family: var(--serif); color: var(--strike); margin-left: 10px; font-size: 16px; }
+  .sitehead nav { display: flex; gap: 18px; }
+  .sitehead nav a { font-size: 13px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: var(--muted); text-decoration: none; }
+  .sitehead nav a:hover, .sitehead nav a[aria-current] { color: var(--ink); }
+  .sitefoot { border-top: 1px solid var(--rule); margin-top: 56px; padding-top: 16px; font-size: 14px; color: var(--muted); display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  .sitefoot a { color: var(--muted); }
+  details.fold { border-top: 1px solid var(--rule); margin: 44px 0 14px; }
+  details.fold > summary {
+    cursor: pointer; list-style: none; padding-top: 20px;
+    font-size: 15px; font-weight: 700; letter-spacing: 0.11em; text-transform: uppercase;
+  }
+  details.fold > summary::-webkit-details-marker { display: none; }
+  details.fold > summary::before { content: "+ "; color: var(--strike); font-weight: 800; }
+  details.fold[open] > summary::before { content: "\2212 "; }
+  details.fold > summary .hint { display: block; font-size: 13.5px; font-weight: 600; letter-spacing: 0.02em; text-transform: none; color: var(--muted); margin-top: 4px; }
+  details.fold > .fold-body { padding-top: 10px; }
+  @media print {
+    :root { --ground: #FFFFFF; --paper: #FFFFFF; --ink: #20242B; --muted: #5A6170; --strike: #9E1B1B; --rule: #C9C4B8; --strip: #F0EFEA; }
+    body { background: #FFFFFF; }
+    .sitehead nav { display: none; }
+    .wrap { max-width: none; padding-left: 0; padding-right: 0; }
+    .sitefoot { break-inside: avoid; }
+  }
+  @media print {
+    .bill, .rulebox, .flag, .slogan { break-inside: avoid; }
+    details.fold > summary { break-after: avoid; }
+  }
 </style>
+</head>
+<body>
+
 
 <div class="wrap">
+  <header class="sitehead">
+    <a class="brand" href="/">Quote What You Delete<span class="tag">A Minnesota ballot transparency project</span></a>
+    <nav>
+      <a href="/">The exhibit</a>
+      <a href="/bill/" aria-current="page">The bill</a>
+      <a href="/scorecard/">The scorecard</a>
+      <a href="/on-the-record/">On the record</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+  </header>
   <div class="masthead">
-    <span>Quote What You Delete &middot; A Minnesota ballot transparency project</span>
+    <span>Proposed Minn. Stat. &sect;204D.151 &middot; Working draft</span>
     <span class="right">For introduction, 2027 session</span>
   </div>
 
@@ -160,8 +216,12 @@
   </div>
   <p class="bill-caption">39 words of their pitch + 13 words of preamble + a 6-word citation + 100 quoted words: each sentence the amendment cuts into, quoted whole, with its address. It fits on a ballot with no legal obstacle; Minnesota imposes no word limit on questions. The last words a voter reads are the constitution's own.</p>
 
-  <h2>Part 3 &middot; Optional companion</h2>
-  <p>The rule guarantees the quote is present; it does not stop a drafter from wrapping it in 300 words of salesmanship. A word limit fixes that, when it is aimed at the right half of the question:</p>
+  <div class="flag"><strong>The boundary.</strong> This rule protects words, not effects. An amendment drafted to override an existing provision by addition must quote it (subd. 3(d)); one that creates the conflict silently, quoting nothing, is beyond any mechanical rule and is the scorecard's job. We publish that limit ourselves rather than wait for someone to demonstrate it: the rule ends the cheapest class of concealment, not every class.</div>
+
+  <details class="fold" id="pocket-a">
+    <summary><span role="heading" aria-level="2">Part 3 &middot; Optional companion</span><span class="hint">Open this if someone proposes word limits.</span></summary>
+    <div class="fold-body">
+<p>The rule guarantees the quote is present; it does not stop a drafter from wrapping it in 300 words of salesmanship. A word limit fixes that, when it is aimed at the right half of the question:</p>
   <div class="bill">
     <div class="bill-strip"><span>Optional subdivision &middot; If question length is ever capped</span></div>
     <div class="bill-body">
@@ -169,10 +229,15 @@
     </div>
   </div>
   <p>Floor for the disclosure, ceiling for the pitch. A cap that excludes the quotation can never squeeze it out; a cap that includes it defeats the requirement by arithmetic and must be refused, which is what subdivision 4 of section 204D.151 guards against.</p>
+  
 
+    </div>
+  </details>
 
-  <h2>Part 4 &middot; The constitutional version</h2>
-  <p>The statute can be repealed, or overridden in daylight under subdivision 5, by any future legislature. The permanent form is an amendment to Article IX, Section 1, the article that governs amendments. It must itself go to the voters, so it is the second step, not the first:</p>
+<details class="fold" id="pocket-b">
+    <summary><span role="heading" aria-level="2">Part 4 &middot; The constitutional version</span><span class="hint">The same rule written into Article IX, for if the statute is ever repealed.</span></summary>
+    <div class="fold-body">
+<p>The statute can be repealed, or overridden in daylight under subdivision 5, by any future legislature. The permanent form is an amendment to Article IX, Section 1, the article that governs amendments. It must itself go to the voters, so it is the second step, not the first:</p>
   <div class="bill">
     <div class="bill-strip"><span>Proposed addition to Minn. Const. art. IX, &sect;1</span></div>
     <div class="bill-body">
@@ -180,9 +245,13 @@
     </div>
   </div>
   <p>Note the self-test: this amendment only adds language, so its own ballot question passes its own rule with nothing to quote. And its consequence clause is self-executing in the strongest sense: a concealing question doesn't just risk a lawsuit, it voids the ratification.</p>
+    </div>
+  </details>
 
-  <h2>Part 5 &middot; Drafting notes</h2>
-  <p>For the staff attorney who has to defend every word. Each choice, and what it's protecting against.</p>
+<details class="fold" id="notes">
+    <summary><span role="heading" aria-level="2">Part 5 &middot; Drafting notes</span><span class="hint">Open this if you have to defend every word. Fourteen notes.</span></summary>
+    <div class="fold-body">
+<p>For the staff attorney who has to defend every word. Each choice, and what it's protecting against.</p>
   <ol class="note-list">
     <li><strong>Verbatim quotation, no materiality filter.</strong> Any filter ("material," "substantive," "key provisions") hands someone discretion over what voters see, and whoever holds that discretion is where the game moves next. Under this draft the only rooms for judgment anywhere in the section are the conforming-changes test in subdivision 3(c) and the express-reference test in subdivision 3(d), and both rooms are closets; everywhere else the only question a court faces is: are the words there or not. That is also why <em>League of Women Voters v. Ritchie</em> stops protecting concealment. Courts defer there because "misleading" has no standard; this section supplies one that requires no judgment to apply.</li>
     <li><strong>The sentence as the unit of quotation (subd. 1).</strong> Without a stated unit, a one-comma amendment quotes either a bare comma or an undefined amount of context, and either answer reintroduces discretion. The complete sentence is the unit because sentence boundaries in the constitutional text are objective: change any part, quote the whole sentence as it reads on filing day. The worked example grows by a lead-in and a tail and becomes more readable, not less; a mid-sentence fragment has no subject.</li>
@@ -199,10 +268,61 @@
     <li><strong>The appropriation, priced honestly.</strong> Subdivision 7's cost is contingent and, in the expected case, zero: the chokepoint completion happens before ballots print, and reimbursement is owed only if a court-ordered correction lands after county preparation. A finance committee that wants to cap the appropriation or convert it to a biennial line item can do so without touching the design; the disclosure rule does not depend on the money.</li>
     <li><strong>The boundary, stated plainly.</strong> This section protects words, not operativeness, and no mechanical rule can do more without a legal-effect test &mdash; the judgment call whose absence is the section's entire enforcement theory. What remains outside it: an amendment that conflicts with existing text silently, naming nothing and claiming nothing, leaving courts to sort out which provision governs; a two-step that adds an override in one election and deletes the then-dead words in a later one; a global priority clause, which subdivision 3(e) can only flag, not quote; and salesmanship wrapped around a fully compliant quotation. Those live where judgment lives &mdash; the scorecard's criteria. (Each, though, leaves its full added text underlined in the sample ballot under section 2 of the bill: beyond the ballot rule's reach, but not invisible.) And one designed use of subdivision 5 should be said before someone asks: a wholesale constitutional revision in the 1974 style, which reorganizes language throughout, is exactly the case for the stand-alone exemption section &mdash; the revision act exempts its own question, in daylight, in a section anyone can read, and the voters weigh the revision knowing that. Publishing this boundary is deliberate: the section ends the cheapest class of concealment, and claiming it ends every class is how the gap would eventually be used against it.</li>
   </ol>
+    </div>
+  </details>
 
-  <div class="sources">
+<div class="sources">
     Sources: <a href="https://www.revisor.mn.gov/statutes/cite/204D.15">Minn. Stat. &sect;204D.15</a> &middot; <a href="https://www.revisor.mn.gov/statutes/cite/204B.44">Minn. Stat. &sect;204B.44</a> &middot; <a href="https://www.revisor.mn.gov/bills/94/2026/0/HF/3900/versions/3/">HF 3900, 3rd Engrossment (2026)</a> &middot; <a href="https://www.revisor.mn.gov/constitution/">Minn. Const. art. IX, &sect;1; art. XI, &sect;8</a> &middot; League of Women Voters Minn. v. Ritchie, 819 N.W.2d 636 (Minn. 2012) &middot; Limmer v. Ritchie, 819 N.W.2d 622 (Minn. 2012) &middot; Fla. Stat. &sect;101.161 (title/summary caps)
   </div>
+  <footer class="sitefoot">
+    <span>Proposed Minn. Stat. &sect;204D.151 &middot; Working draft &middot; Independent and self-funded; no contributions accepted</span>
+    <span>Contact: Clint Priest &middot; <a href="mailto:hello@quotewhatyoudelete.org">hello@quotewhatyoudelete.org</a></span>
+  </footer>
 </div>
+
+<script>
+(function () {
+  try {
+    document.querySelectorAll("details.fold[id]").forEach(function (d) {
+      var key = "bhp-fold:" + d.id;
+      var saved = localStorage.getItem(key);
+      if (saved === "open") d.open = true;
+      d.addEventListener("toggle", function () {
+        if (window.__bhpPrinting) return;
+        localStorage.setItem(key, d.open ? "open" : "closed");
+      });
+    });
+  } catch (e) { /* private-mode storage blocks are fine; folds just won't persist */ }
+})();
+</script>
+<script>
+(function () {
+  var reclose = [];
+  window.addEventListener("beforeprint", function () {
+    window.__bhpPrinting = true;
+    reclose = [];
+    document.querySelectorAll("details.fold:not([open])").forEach(function (d) {
+      reclose.push(d); d.open = true;
+    });
+  });
+  window.addEventListener("afterprint", function () {
+    reclose.forEach(function (d) { d.open = false; });
+    reclose = [];
+    window.__bhpPrinting = false;
+  });
+})();
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
 
 

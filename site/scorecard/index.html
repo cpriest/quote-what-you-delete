@@ -1,4 +1,18 @@
-<title>Ballot Question Scorecard</title>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="description" content="Six draft transparency criteria for Minnesota ballot questions, frozen at public launch. HF 3900 scores 0 of 6; four historical questions serve as calibration.">
+<link rel="canonical" href="https://quotewhatyoudelete.org/scorecard/">
+<meta property="og:title" content="Ballot Question Scorecard - Quote What You Delete">
+<meta property="og:description" content="Six frozen transparency criteria for Minnesota ballot questions. HF 3900 scores 0 of 6; four historical questions serve as calibration.">
+<meta property="og:image" content="https://quotewhatyoudelete.org/assets/hf3900-exhibit.png">
+<meta property="og:url" content="https://quotewhatyoudelete.org/scorecard/">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>&#x1F5F3;&#xFE0F;</text></svg>">
+<title>Ballot Question Scorecard - Quote What You Delete</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Tinos:ital,wght@0,400;0,700;1,400&display=swap">
@@ -85,11 +99,43 @@
 
   .foot { font-size: 14px; color: var(--muted); border-top: 1px solid var(--rule); margin-top: 52px; padding-top: 16px; }
   .foot a { color: var(--muted); }
+  .sitehead { border-bottom: 2px solid var(--ink); padding: 18px 0 14px; display: flex; justify-content: space-between; align-items: baseline; gap: 14px; flex-wrap: wrap; }
+  .brand { font-weight: 800; font-size: 17px; letter-spacing: -0.01em; text-decoration: none; color: var(--ink); }
+  .brand .tag { font-weight: 400; font-style: italic; font-family: var(--serif); color: var(--strike); margin-left: 10px; font-size: 16px; }
+  .sitehead nav { display: flex; gap: 18px; }
+  .sitehead nav a { font-size: 13px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: var(--muted); text-decoration: none; }
+  .sitehead nav a:hover, .sitehead nav a[aria-current] { color: var(--ink); }
+  .sitefoot { border-top: 1px solid var(--rule); margin-top: 56px; padding-top: 16px; font-size: 14px; color: var(--muted); display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  .sitefoot a { color: var(--muted); }
+  @media print {
+    :root { --ground: #FFFFFF; --paper: #FFFFFF; --ink: #20242B; --muted: #5A6170; --strike: #9E1B1B; --rule: #C9C4B8; --strip: #F0EFEA; }
+    body { background: #FFFFFF; }
+    .sitehead nav { display: none; }
+    .wrap { max-width: none; padding-left: 0; padding-right: 0; }
+    .sitefoot { break-inside: avoid; }
+  }
+  @media print {
+    ol.criteria li, .rules, .entry, .finding { break-inside: avoid; }
+    .chip.fail { background: none; color: var(--strike); border: 1.5px solid var(--strike); }
+  }
 </style>
+</head>
+<body>
+
 
 <div class="wrap">
+  <header class="sitehead">
+    <a class="brand" href="/">Quote What You Delete<span class="tag">A Minnesota ballot transparency project</span></a>
+    <nav>
+      <a href="/">The exhibit</a>
+      <a href="/bill/">The bill</a>
+      <a href="/scorecard/" aria-current="page">The scorecard</a>
+      <a href="/on-the-record/">On the record</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+  </header>
   <div class="masthead">
-    <span>Quote What You Delete &middot; A Minnesota ballot transparency project</span>
+    <span>Every Minnesota constitutional ballot question &middot; Same rubric &middot; Independent and self-funded; no contributions accepted</span>
     <span class="right">Criteria v1.0 &middot; DRAFT &middot; freeze at launch</span>
   </div>
 
@@ -200,7 +246,20 @@
   <div class="foot">
     Sources: <a href="https://www.revisor.mn.gov/bills/94/2026/0/HF/3900/versions/3/">HF 3900, 3rd Engrossment (2026)</a> &middot; <a href="https://www.revisor.mn.gov/laws/2011/0/88/">2011 Laws ch. 88 (marriage)</a> &middot; <a href="https://www.revisor.mn.gov/laws/2012/0/167/">2012 Laws ch. 167 (photo ID)</a> &middot; <a href="https://www.revisor.mn.gov/laws/2008/0/151/">2008 Laws ch. 151 (Legacy)</a> &middot; <a href="https://www.revisor.mn.gov/laws/1988/0/690/">1988 Laws ch. 690 (lottery)</a> &middot; <a href="https://www.revisor.mn.gov/constitution/">Minnesota Constitution</a> &middot; League of Women Voters Minn. v. Ritchie, 819 N.W.2d 636 (Minn. 2012) (<a href="https://mn.gov/law-library-stat/archive/supct/1208/OPA120920-0827.pdf">slip opinion</a>)
   </div>
+  <footer class="sitefoot">
+    <span>Every Minnesota constitutional ballot question &middot; Same rubric &middot; Independent and self-funded; no contributions accepted</span>
+    <span>Contact: Clint Priest &middot; <a href="mailto:hello@quotewhatyoudelete.org">hello@quotewhatyoudelete.org</a></span>
+  </footer>
 </div>
+
+</body>
+</html>
+
+
+
+
+
+
 
 
 

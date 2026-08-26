@@ -4,6 +4,6 @@ The contents of this repository are licensed under the Creative Commons Attribut
 
 You are free to copy, redistribute, remix, and build upon this material for any purpose, including commercially, provided you give appropriate credit.
 
-Suggested attribution: "Ballot Honesty Project (ballothonesty.org)"
+Suggested attribution: "Quote What You Delete (quotewhatyoudelete.org)"
 
 Full license text: https://creativecommons.org/licenses/by/4.0/legalcode
