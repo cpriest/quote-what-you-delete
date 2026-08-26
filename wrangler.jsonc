@@ -1,0 +1,27 @@
+{
+  // Static site: serves ./site on Cloudflare Workers.
+  // Production  <- `main`   branch -> quotewhatyoudelete.org
+  // Staging     <- `staged` branch -> staging.quotewhatyoudelete.org
+  "name": "quote-what-you-delete",
+  "compatibility_date": "2026-08-26",
+  "assets": {
+    "directory": "./site",
+    "not_found_handling": "404-page"
+  },
+  "routes": [
+    { "pattern": "quotewhatyoudelete.org", "custom_domain": true },
+    { "pattern": "www.quotewhatyoudelete.org", "custom_domain": true }
+  ],
+  "env": {
+    // Deploys as the separate Worker `quote-what-you-delete-staging`.
+    "staging": {
+      "assets": {
+        "directory": "./site",
+        "not_found_handling": "404-page"
+      },
+      "routes": [
+        { "pattern": "staging.quotewhatyoudelete.org", "custom_domain": true }
+      ]
+    }
+  }
+}
