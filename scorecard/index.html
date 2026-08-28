@@ -12,12 +12,12 @@
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
       --ground: #16181D; --paper: #1F232B; --ink: #E8E5DC; --muted: #9AA0AB;
-      --strike: #E0564F; --rule: #363B44; --strip: #272C34;
+      --strike: #E96A63; --rule: #363B44; --strip: #272C34;
     }
   }
   :root[data-theme="dark"] {
     --ground: #16181D; --paper: #1F232B; --ink: #E8E5DC; --muted: #9AA0AB;
-    --strike: #E0564F; --rule: #363B44; --strip: #272C34;
+    --strike: #E96A63; --rule: #363B44; --strip: #272C34;
   }
   * { box-sizing: border-box; }
   body { margin: 0; background: var(--ground); color: var(--ink); font-family: var(--sans); line-height: 1.55; -webkit-font-smoothing: antialiased; }
@@ -89,7 +89,7 @@
 
 <div class="wrap">
   <div class="masthead">
-    <span>Ballot Honesty Project &middot; "Quote what you delete."</span>
+    <span>Quote What You Delete</span>
     <span class="right">Criteria v1.0 &middot; DRAFT &middot; freeze at launch</span>
   </div>
 
@@ -102,7 +102,7 @@
     <li><span class="q">Does the question quote the constitutional language the amendment deletes or modifies?</span><span class="cond">Applies only when existing constitutional language is deleted or modified. A fail cites the deleted words and the question's silence.</span></li>
     <li><span class="q">Does the ballot title name the thing being changed, rather than only a predicted benefit?</span><span class="cond">Always applies. "Increasing funding to school districts" is a prediction; "Photo Identification Required for Voting" is a mechanism.</span></li>
     <li><span class="q">If any control moves from the constitution to ordinary statute, does the question say so?</span><span class="cond">Applies only when the amendment converts a constitutional command into something the legislature can later change by law.</span></li>
-    <li><span class="q">If the amendment gives anyone new authority or creates a new system, does the question identify it?</span><span class="cond">Applies when new authority or machinery is created. The least mechanical criterion; close calls are flagged, not hidden (see v1.1 note below).</span></li>
+    <li><span class="q">If the amendment gives anyone new authority or creates a new system, does the question identify it?</span><span class="cond">Applies when new authority or machinery is created. The least mechanical criterion; close calls are flagged, not hidden.</span></li>
     <li><span class="q">If new spending is authorized against a protected or dedicated fund, does the question disclose it?</span><span class="cond">Applies only when the amendment opens a protected fund to a new category of spending.</span></li>
     <li><span class="q">Does the question avoid asserting facts that would be true whether the amendment passes or fails?</span><span class="cond">Always applies. A fact identical under yes and no carries no information about how to vote; its only function is implication. Test each clause: "still true if this fails?"</span></li>
   </ol>
@@ -111,7 +111,7 @@
   <div class="rules">
     <p><strong>Frozen criteria.</strong> These six are v1.0; the freeze is stamped at public launch. Changes create a new version that applies only to questions scored after the change. No criterion is ever adjusted to reach a preferred result.</p>
     <p><strong>Every question, both directions.</strong> Every statewide constitutional ballot question gets scored, including ones we would vote for. When a question we support scores badly, the bad score gets published. That is the entire value of this page.</p>
-    <p><strong>Documentary evidence.</strong> Every FAIL must cite verbatim text from the proposing law or the constitution. No fail stands on characterization alone.</p>
+    <p><strong>Documentary evidence.</strong> Every FAIL must cite verbatim text from the proposing law or the constitution. No fail stands on characterization alone. A quotation of a person carries a pin cite to the page it appears on.</p>
     <p><strong>Scores are not comparable across questions.</strong> Criteria that don't apply are marked N/A and excluded. The per-criterion verdicts are the substance; the ratio is a summary. The notable case is a question where every criterion applies and every criterion fails.</p>
   </div>
 
@@ -150,10 +150,10 @@
     <div class="entry-head"><span class="name">Photo ID amendment &middot; 2012 (rejected by voters)</span><span class="score">2 of 3</span></div>
     <div class="entry-q"><b>Question:</b> "Shall the Minnesota Constitution be amended to require all voters to present valid photo identification to vote and to require the state to provide free identification to eligible voters, effective July 1, 2013?" <b>Title:</b> "Photo Identification Required for Voting."</div>
     <div class="rows">
-      <div class="row"><span class="cnum">1</span><span class="chip na">N/A</span><span class="ev">Added new language only. (See the correction below; this surprised us.)</span></div>
+      <div class="row"><span class="cnum">1</span><span class="chip na">N/A</span><span class="ev">Added new language only; the quotation rule would not have applied (see below).</span></div>
       <div class="row"><span class="cnum">2</span><span class="chip pass">Pass</span><span class="ev">Title names the mechanism.</span></div>
       <div class="row"><span class="cnum">3</span><span class="chip na">N/A</span><span class="ev">No existing constitutional control moved to statute.</span></div>
-      <div class="row"><span class="cnum">4</span><span class="chip fail">Fail</span><span class="ev">The full text created a provisional-ballot system and a <b>"substantially equivalent identity and eligibility verification"</b> standard for absentee voting, machinery the question never mentions. Two justices called the gap "bait and switch" (LWV v. Ritchie, dissent).</span></div>
+      <div class="row"><span class="cnum">4</span><span class="chip fail">Fail</span><span class="ev">The full text created a provisional-ballot system and a <b>"substantially equivalent identity and eligibility verification"</b> standard for absentee voting, machinery the question never mentions. In dissent, Justice Alan Page &mdash; joined by Justice Paul H. Anderson &mdash; wrote that the question "constitutes a bait and switch" and that its words "were phrased to actively deceive and mislead" (<i>LWV v. Ritchie</i>, No. A12-0920, slip op. at D-12, D-26 (Minn. Aug. 27, 2012) (Page, J., dissenting)).</span></div>
       <div class="row"><span class="cnum">5</span><span class="chip na">N/A</span><span class="ev">No protected fund involved.</span></div>
       <div class="row"><span class="cnum">6</span><span class="chip pass">Pass</span><span class="ev">Both asserted requirements are effects of passage; nothing invariant.</span></div>
     </div>
@@ -177,7 +177,7 @@
     <div class="entry-q"><b>Question:</b> "Shall the Minnesota Constitution be amended to permit the legislature to authorize a lottery operated by the state?"</div>
     <div class="rows">
       <div class="row"><span class="cnum">1</span><span class="chip fail">Fail</span><span class="ev">This amendment modified existing text: art. XIII, &sect;5's flat ban (<b>"The legislature shall not authorize any lottery or the sale of lottery tickets"</b>) gained an exception. The question describes the change honestly ("permit" concedes a ban exists) but quotes nothing.</span></div>
-      <div class="row"><span class="cnum">2</span><span class="chip pending">Pending</span><span class="ev">The 1988 ballot title has not yet been verified from primary sources; scored when it is.</span></div>
+      <div class="row"><span class="cnum">2</span><span class="chip pending">Pending</span><span class="ev">Pending primary-source confirmation. Ballotpedia records no separate title beyond the question itself; if the 1988 sample ballot confirms that, this criterion scores on the question, which names the mechanism.</span></div>
       <div class="row"><span class="cnum">3</span><span class="chip pass">Pass</span><span class="ev">The shift is the disclosed point: "permit the legislature to authorize."</span></div>
       <div class="row"><span class="cnum">4</span><span class="chip pass">Pass</span><span class="ev">The new authority-holder is named in the question: the legislature.</span></div>
       <div class="row"><span class="cnum">5</span><span class="chip na">N/A</span><span class="ev">No protected fund involved.</span></div>
@@ -185,22 +185,22 @@
     </div>
   </div>
 
-  <h2>What calibration taught us (including where we were wrong)</h2>
+  <h2>What calibration shows</h2>
   <div class="finding">
     <p><strong>Transparency is not policy agreement.</strong> The most controversial question on this page, the 2012 marriage amendment, scores perfectly: whatever you think of the policy, the question said exactly what the amendment did, and voters rejected it anyway. The beloved Legacy Amendment loses a point for a title that sells benefits and hides the tax. If this rubric were a partisan weapon, those two results would be reversed.</p>
   </div>
   <div class="finding">
-    <p><strong>Correction: we previously claimed the quotation rule "would have caught" the 2012 photo ID question.</strong> Checked against the session law, that's wrong: the amendment only added text, so a quote-what-you-delete rule would not have applied. Its deception was hidden <em>additions</em> (the provisional-ballot and absentee-verification machinery), which this scorecard catches at criterion 4, and which the proposed &sect;204D.151 does not reach. That's a real limit of the rule, now stated plainly.</p>
+    <p><strong>A known limit of the quotation rule.</strong> The 2012 photo ID amendment only added text, so a quote-what-you-delete rule would not have applied to it. Its deception was hidden <em>additions</em> (the provisional-ballot and absentee-verification machinery), which this scorecard catches at criterion 4 and which the proposed &sect;204D.151 does not reach. Stated here so nobody discovers it as a gotcha.</p>
   </div>
   <div class="finding">
-    <p><strong>Correction: we previously claimed the 1988 lottery question "wouldn't have been touched" by the rule.</strong> Also wrong: that amendment modified an existing ban, so the rule would have required quoting one sentence. The interesting part: the honest 1988 question could have carried that quotation at zero cost. The rule burdens honest questions trivially and concealing ones fatally, which is the design working.</p>
+    <p><strong>Honest questions carry the rule at no cost.</strong> The 1988 lottery amendment modified an existing ban, so the rule would have required quoting one sentence. The 1988 question was honest, and the quotation would have cost it nothing. The rule burdens honest questions trivially and concealing ones fatally, which is the design working.</p>
   </div>
-  <div class="finding">
-    <p><strong>Open item for v1.1.</strong> Criterion 4's applicability test ("does this create new authority?") is the least mechanical of the six, and hidden-addition deception (photo ID's trick) deserves a sharper instrument than it currently gets. Proposals will be versioned, dated, and applied prospectively only.</p>
-  </div>
+  
 
   <div class="foot">
-    Sources: <a href="https://www.revisor.mn.gov/bills/94/2026/0/HF/3900/versions/3/">HF 3900, 3rd Engrossment (2026)</a> &middot; <a href="https://www.revisor.mn.gov/laws/2011/0/88/">2011 Laws ch. 88 (marriage)</a> &middot; <a href="https://www.revisor.mn.gov/laws/2012/0/167/">2012 Laws ch. 167 (photo ID)</a> &middot; <a href="https://www.revisor.mn.gov/laws/2008/0/151/">2008 Laws ch. 151 (Legacy)</a> &middot; <a href="https://www.revisor.mn.gov/laws/1988/0/690/">1988 Laws ch. 690 (lottery)</a> &middot; <a href="https://www.revisor.mn.gov/constitution/">Minnesota Constitution</a> &middot; League of Women Voters Minn. v. Ritchie, 819 N.W.2d 636 (Minn. 2012)
+    Sources: <a href="https://www.revisor.mn.gov/bills/94/2026/0/HF/3900/versions/3/">HF 3900, 3rd Engrossment (2026)</a> &middot; <a href="https://www.revisor.mn.gov/laws/2011/0/88/">2011 Laws ch. 88 (marriage)</a> &middot; <a href="https://www.revisor.mn.gov/laws/2012/0/167/">2012 Laws ch. 167 (photo ID)</a> &middot; <a href="https://www.revisor.mn.gov/laws/2008/0/151/">2008 Laws ch. 151 (Legacy)</a> &middot; <a href="https://www.revisor.mn.gov/laws/1988/0/690/">1988 Laws ch. 690 (lottery)</a> &middot; <a href="https://www.revisor.mn.gov/constitution/">Minnesota Constitution</a> &middot; League of Women Voters Minn. v. Ritchie, 819 N.W.2d 636 (Minn. 2012) (<a href="https://mn.gov/law-library-stat/archive/supct/1208/OPA120920-0827.pdf">slip opinion</a>)
   </div>
 </div>
+
+
 

@@ -20,7 +20,7 @@
       --paper: #1F232B;
       --ink: #E8E5DC;
       --muted: #9AA0AB;
-      --strike: #E0564F;
+      --strike: #E96A63;
       --rule: #363B44;
       --strip: #272C34;
     }
@@ -30,7 +30,7 @@
     --paper: #1F232B;
     --ink: #E8E5DC;
     --muted: #9AA0AB;
-    --strike: #E0564F;
+    --strike: #E96A63;
     --rule: #363B44;
     --strip: #272C34;
   }
@@ -64,6 +64,8 @@
   .panels { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: start; }
   @media (max-width: 800px) { .panels { grid-template-columns: 1fr; } }
 
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+  .engross-body del, .engross-body ins { display: block; }
   .panel-label {
     font-size: 13px; font-weight: 700; letter-spacing: 0.13em;
     text-transform: uppercase; color: var(--muted); margin-bottom: 10px;
@@ -154,7 +156,7 @@
 
   <div class="panels">
     <div class="panel">
-      <div class="panel-label">What voters will see</div>
+      <h2 class="panel-label" style="margin:0 0 10px">What voters will see</h2>
       <div class="ballot">
         <div class="ballot-strip">Official ballot &middot; Constitutional amendment</div>
         <div class="ballot-body">
@@ -170,26 +172,26 @@
     </div>
 
     <div class="panel">
-      <div class="panel-label">What the amendment does</div>
+      <h2 class="panel-label" style="margin:0 0 10px">What the amendment does</h2>
       <div class="engross">
         <div class="engross-strip">
           <span>Minn. Const. art. XI, &sect;8</span>
           <span class="legend"><span class="lx">struck</span> = deleted &middot; <span class="la">underlined</span> = added</span>
         </div>
         <div class="engross-body">
-          <div class="del-hero">The principal of the permanent school fund shall be perpetual and inviolate forever.</div>
-          <div class="del">&hellip;to secure the maximum return consistent with the maintenance of the perpetuity of the fund.</div>
-          <div class="del">&hellip;all losses not offset by gains shall be repaid to the fund from the interest and dividends earned thereafter.</div>
-          <div class="add">&hellip;and managed as a perpetual financial resource&hellip;</div>
-          <div class="add">Reasonable and necessary administrative costs associated with managing the fund or school trust lands may be paid from the fund in the manner prescribed by law.</div>
-          <div class="add">The distribution policy shall be prescribed by law&hellip;</div>
+          <del class="del-hero"><span class="sr-only">Deleted from the constitution: </span>The principal of the permanent school fund shall be perpetual and inviolate forever.</del>
+          <del class="del"><span class="sr-only">Deleted: </span>&hellip;to secure the maximum return consistent with the maintenance of the perpetuity of the fund.</del>
+          <del class="del"><span class="sr-only">Deleted: </span>&hellip;all losses not offset by gains shall be repaid to the fund from the interest and dividends earned thereafter.</del>
+          <ins class="add"><span class="sr-only">Added: </span>&hellip;and managed as a perpetual financial resource&hellip;</ins>
+          <ins class="add"><span class="sr-only">Added: </span>Reasonable and necessary administrative costs associated with managing the fund or school trust lands may be paid from the fund in the manner prescribed by law.</ins>
+          <ins class="add"><span class="sr-only">Added: </span>The distribution policy shall be prescribed by law&hellip;</ins>
           <div class="engross-note">
             <p><strong>"Perpetual" survives as a goal, not a rule.</strong> The struck text ordered losses repaid to the fund. The new text sets a management aim and leaves the rest to statute.</p>
             <p><strong>The payout rate isn't in the amendment.</strong> The new 4.5% distribution sits in ordinary statute (Minn. Stat. &sect;11A.16, subd. 5, as amended). A future legislature can change it by simple majority.</p>
           </div>
         </div>
       </div>
-      <div class="panel-caption">Every quoted word above is from HF 3900, 3rd Engrossment.</div>
+      <div class="panel-caption">Excerpts, shown out of document order. Every quoted word is from HF 3900, 3rd Engrossment (sources below).</div>
     </div>
   </div>
 
@@ -198,14 +200,14 @@
     <div class="stat zero"><span class="n">0</span><span class="lbl">mentions of any deletion in the ballot question</span></div>
   </div>
 
-  <div class="kicker">Sell an investment this way and it's securities fraud. <span class="q">On a ballot, it's legal.</span></div>
+  <div class="kicker">A prospectus that omitted this would be securities fraud. <span class="q">A ballot question faces no standard at all.</span></div>
   <div class="fix">The fix is one sentence: a ballot question that deletes constitutional language must <span class="q">quote the words it deletes</span>.</div>
-  <div class="fair">A total-return endowment is a defensible way to run a school trust. Concealing the trade from voters is not.</div>
+  <div class="fair">A total-return endowment is a defensible way to run a school trust, and the House passed this amendment without a single no vote. The problem is the question that omits the trade.</div>
 
   <div class="explainer">
     <h2>What is happening</h2>
     <p>HF 3900 puts a constitutional amendment on Minnesota's November 2026 ballot. It rewrites the Permanent School Fund clause of the constitution: out goes the requirement that the fund's principal stay "perpetual and inviolate forever" and that investment losses be repaid from future earnings; in comes a total-return payout whose rate, definitions, and policy live in ordinary statute.</p>
-    <p>Voters won't learn any of that from the ballot. The question describes a benefit, increased school funding with no new taxes, and says nothing about what is being removed. The legislature wrote the title and question into the bill itself, and under <em>Limmer v. Ritchie</em> (Minn. 2012), no one else can revise that framing. Under <em>League of Women Voters v. Ritchie</em> (Minn. 2012), courts defer to it almost completely. Two justices in that case called a similar gap between ballot language and actual effect "bait and switch." The court let it through anyway.</p>
+    <p>Voters won't learn any of that from the ballot. The question describes a benefit, increased school funding "without raising individual income or property taxes," and says nothing about what is being removed. The legislature wrote the title and question into the bill itself; under <em>Limmer v. Ritchie</em> (Minn. 2012) no one else may revise the title it chose, and under <em>League of Women Voters v. Ritchie</em> (Minn. 2012) courts defer to the question almost completely. In dissent, Justice Alan Page &mdash; joined by Justice Paul H. Anderson &mdash; wrote that the question "constitutes a bait and switch" and that its words "were phrased to actively deceive and mislead." The court let it through anyway.</p>
     <p>There's a familiar name for this structure in the investment world: material omission. A prospectus made entirely of true sentences is still fraud if it leaves out what a reasonable buyer would need to know. Ballot questions face no such standard.</p>
 
     <h2>What changes hands</h2>
@@ -218,8 +220,8 @@
 
     <h2>The proposed rule</h2>
     <div class="rulebox">Any ballot question proposing to amend the Minnesota Constitution that would delete or modify existing constitutional language must quote that language verbatim in the question as it appears on the ballot.</div>
-    <p>It is self-executing: either the deleted words appear in the question or they don't. No reviewing body, no budget, no discretion anywhere. It would have stopped this ballot question cold, and it ignores honest ones. The 1988 lottery amendment and the 2008 Legacy Amendment added new language and described it accurately; this rule wouldn't have touched either.</p>
-    <p>The rule now exists as a bill ready for the 2027 session: a new section 204D.151 of the election code. Every compliant question gets the same fixed shape, the question, then a label line reading "This amendment would remove or change the following words of the Constitution:", then the quotation, and nothing after it. The quoted words are exempt from any length limit, any future exemption must be enacted as a stand-alone section naming the rule it escapes, and any citizen can enforce compliance through the existing ballot-error statute.</p>
+    <p>It is self-executing: either the deleted words appear in the question or they don't. No reviewing body, no budget, no discretion anywhere. It would have stopped this ballot question cold, and it burdens honest ones only trivially. The 2012 marriage amendment and the 2008 Legacy Amendment only added new language; the rule wouldn't have touched either. The 1988 lottery amendment modified an existing ban, so its question would have quoted one sentence &mdash; a cost an honest question carries easily.</p>
+    <p>The rule now exists as a bill ready for the 2027 session: a new section 204D.151 of the election code. Every compliant question gets the same fixed shape, the question, then a label line reading "This amendment would remove or change the following words of the Minnesota Constitution:", then the quotation, and nothing after it. The quoted words are exempt from any length limit, any future exemption must be enacted as a stand-alone section naming the rule it escapes, and any citizen can enforce compliance through the existing ballot-error statute.</p>
 
     <div class="sources">
       Sources: <a href="https://www.revisor.mn.gov/bills/94/2026/0/HF/3900/versions/3/">HF 3900, 3rd Engrossment (2026)</a> &middot; <a href="https://www.revisor.mn.gov/constitution/">Minnesota Constitution, art. XI, &sect;8</a> &middot; League of Women Voters Minn. v. Ritchie, 819 N.W.2d 636 (Minn. 2012) &middot; Limmer v. Ritchie, 819 N.W.2d 622 (Minn. 2012)

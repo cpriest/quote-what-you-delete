@@ -1,4 +1,4 @@
-# Ballot Honesty Project
+# Quote What You Delete
 
 *"Quote what you delete."*
 
@@ -18,8 +18,8 @@ This project is not a campaign for or against that amendment. It exists to make 
 
 ## Verification
 
-Every quotation in these materials was checked verbatim against primary sources on revisor.mn.gov: HF 3900, 3rd Engrossment (2026); the Minnesota Constitution; and the proposing session laws of the historical amendments scored on the scorecard. `exhibit/README.md` documents the checks. If you find an error, say so: hello@ballothonesty.org — corrections get published, including against ourselves.
+Every quotation in these materials was checked verbatim against primary sources on revisor.mn.gov: HF 3900, 3rd Engrossment (2026); the Minnesota Constitution; and the proposing session laws of the historical amendments scored on the scorecard. `exhibit/README.md` documents the checks. If you find an error, say so: hello@quotewhatyoudelete.org — corrections get published, including against ourselves.
 
 ## Contact
 
-Clint Priest · hello@ballothonesty.org · ballothonesty.org
+Clint Priest · hello@quotewhatyoudelete.org · quotewhatyoudelete.org
