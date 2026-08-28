@@ -3,10 +3,16 @@
   // Production  <- `main`   branch -> quotewhatyoudelete.org
   // Staging     <- `staged` branch -> staging.quotewhatyoudelete.org
   "name": "quote-what-you-delete",
+  // src/index.js only redirects www -> apex; everything else falls through to ./site.
+  "main": "src/index.js",
   "compatibility_date": "2026-08-26",
   "assets": {
     "directory": "./site",
-    "not_found_handling": "404-page"
+    "not_found_handling": "404-page",
+    "binding": "ASSETS",
+    // Assets would otherwise be served before the Worker runs, and the redirect
+    // would never fire for pages that exist.
+    "run_worker_first": true
   },
   "routes": [
     { "pattern": "quotewhatyoudelete.org", "custom_domain": true },
@@ -17,7 +23,9 @@
     "staging": {
       "assets": {
         "directory": "./site",
-        "not_found_handling": "404-page"
+        "not_found_handling": "404-page",
+        "binding": "ASSETS",
+        "run_worker_first": true
       },
       "routes": [
         { "pattern": "staging.quotewhatyoudelete.org", "custom_domain": true }
