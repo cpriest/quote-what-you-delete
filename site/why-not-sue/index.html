@@ -34,6 +34,10 @@
   .sitehead { border-bottom: 2px solid var(--ink); padding: 18px 0 14px; display: flex; justify-content: space-between; align-items: baseline; gap: 14px; flex-wrap: wrap; }
   .brand { font-weight: 800; font-size: 17px; letter-spacing: -0.01em; text-decoration: none; color: var(--ink); }
   .brand .tag { font-weight: 400; font-style: italic; font-family: var(--serif); color: var(--strike); margin-left: 10px; font-size: 16px; }
+  /* Phone: the tagline gets its own line instead of wrapping mid-sentence beside the name. */
+  @media (max-width: 640px) {
+    .brand .tag { display: block; margin-left: 0; margin-top: 3px; font-size: 14px; text-wrap: balance; }
+  }
   nav { display: flex; gap: 18px; }
   nav a { font-size: 13px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: var(--muted); text-decoration: none; }
   nav a:hover, nav a[aria-current] { color: var(--ink); }
