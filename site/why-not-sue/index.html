@@ -50,6 +50,9 @@
   .cite { font-size: 13.5px; color: var(--muted); margin-top: 6px; }
   .sitefoot { border-top: 1px solid var(--rule); margin-top: 56px; padding-top: 16px; font-size: 14px; color: var(--muted); display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
   .sitefoot a { color: var(--muted); }
+  /* Minn. Stat. §10A.202 subd. 4 disclaimer. Own full-width line so it reads as a
+     disclaimer rather than as part of the project's own footer prose. */
+  .paidfor { flex-basis: 100%; }
   @media print {
     :root { --ground: #FFFFFF; --paper: #FFFFFF; --ink: #20242B; --muted: #5A6170; --strike: #9E1B1B; --rule: #C9C4B8; --strip: #F0EFEA; }
     body { background: #FFFFFF; }
@@ -98,6 +101,7 @@
   <footer class="sitefoot">
     <span>Quote What You Delete &middot; Independent and self-funded; no contributions accepted</span>
     <span>Sources: <a href="https://www.revisor.mn.gov/statutes/cite/204B.44">Minn. Stat. &sect;204B.44</a> &middot; <a href="https://mn.gov/law-library-stat/archive/supct/1208/OPA120920-0827.pdf">LWV v. Ritchie, slip op.</a></span>
+    <span class="paidfor">Paid for by Clint Priest.</span>
   </footer>
 </div>
 </body>
